@@ -10,6 +10,7 @@ const About = () => {
         Welcome to Quantum Chain Limited! We are a technology-driven company committed to providing innovative financial solutions.
         Our mission is to bridge technology and finance to empower our clients globally.
       </p>
+      <p>James Casas P. Winchester</p>
     </div>
   );
 };
