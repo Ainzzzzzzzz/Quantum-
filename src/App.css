@@ -1,0 +1,106 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+  transition: background-color 0s ease;
+}
+
+.no-transition {
+  background-color: #000;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* Navigation arrows container */
+.navigation-arrows {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.arrow.right-arrow {
+  position: absolute;
+  right: 20px;
+}
+
+.arrow.left-arrow {
+  position: absolute;
+  left: 20px;
+}
+
+/* Arrow styling */
+.arrow {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.4s ease, color 0.3s ease;
+  position: relative;
+  z-index: 10;
+  padding: 10px;
+}
+
+.arrow:hover {
+  color: rgba(255, 87, 34, 1);
+  transform: scale(1.1);
+}
+
+/* Removed the glowing effect */
+.arrow:focus {
+  outline: none;
+}
+
+/* App container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 203.1vh;
+  height: 100vh;
+  animation: gradientAnimation 15s ease infinite;
+  z-index: 1;
+}
+
+.no-transition .page-transition-enter,
+.no-transition .page-transition-exit {
+  transition: none;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: -1;
+  transition: background 0.3s ease;
+}

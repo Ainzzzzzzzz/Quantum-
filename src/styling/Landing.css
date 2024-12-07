@@ -1,0 +1,346 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #000;
+  width: 100%;
+  min-height: 500vh;
+  font-size: 100%; /* 1rem = 10px */
+  overflow: hidden;
+}
+
+/* Quantum Cursor Styling with Liquid Drop (Transparent inside with White Border) */
+.quantum-cursor {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: transparent; /* Transparent inside */
+  border: 3px solid white; /* White border color for the cursor */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 255, 255, 0.4); /* Glowing white effect */
+  animation: quantumPulse 1.5s infinite alternate;
+}
+
+
+@keyframes quantumPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    transform: scale(1.3);
+    box-shadow: 0 0 45px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.7);
+  }
+}
+
+
+
+
+/* Zoom-Out Animation */
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+
+/* Apply Zoom-Out or Slide-Left to landing container */
+.landing-container.zoom-out {
+  animation: zoomOut 1s ease-in-out forwards;
+}
+
+.landing-container.slide-left {
+  animation: slideLeft 1s ease-in-out forwards;
+}
+
+
+/* Wrapper with Animation */
+.wrapper {
+  position: relative;
+  min-height: 115vh;
+  overflow: hidden;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Hexagon Styling */
+.hex {
+  display: inline-flex;
+  margin-top: -60px;
+  margin-left: -80px;
+  overflow: hidden;
+  z-index: 1; /* Ensure interaction priority */
+}
+.hex:nth-child(odd) {
+  margin-left: 70px; /* Adjust staggered effect */
+}
+.hexagon {
+  position: relative;
+  background-color: #111;
+  height: 190px;
+  width: 150px;
+  transition: 2s;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: 1; /* Allow hover even behind text */
+}
+.hex::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+}
+.hexagon:hover {
+  transition: 0s;
+  background: lime;
+}
+
+/* Landing Container */
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+  width: 100vw;
+  background: 
+    radial-gradient(circle, rgba(255, 51, 51, 0.5) 30%, rgba(255, 0, 0, 0.4) 80%), 
+    linear-gradient(45deg, rgba(0, 0, 0, 0.7) 30%, transparent 30%), 
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.7) 30%, transparent 30%);
+  background-size: cover, cover, cover;
+  background-position: center, top left, top right;
+  text-align: center;
+  position: fixed; /* Keep it fixed */
+  top: 0;
+  left: 0;
+  z-index: 10000; /* Ensure it's above other content */
+  padding: 50px 40px 20px;
+  background-color: rgba(0, 0, 0, 0.8); /* Ensure full coverage */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 50px); /* Start lower and horizontally centered */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0); /* End at the exact center */
+  }
+}
+/* Initial state of the landing page */
+.landing-container {
+  opacity: 1;
+  transition: opacity 1s ease-out; /* Apply fade-out effect */
+}
+
+.landing-container.fade-out {
+  opacity: 0; /* Fade out when transitioning */
+}
+
+.landing-container.zoom-out {
+  transform: scale(0.7); /* Zoom out the landing page */
+  transform-origin: center; /* Ensure it zooms out from the center */
+}
+/* Home page content (initially hidden) */
+.home-page-content {
+  display: none; /* Hide content by default */
+}
+
+/* When transitioning to home page, make it visible */
+.landing-container.fade-out .home-page-content {
+  display: block; /* Show the home page content */
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 6vw;
+  text-align: center;
+  position: absolute;
+  top: 20%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+  letter-spacing: 2px;
+  z-index: 2;
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.3), 
+    -1px -1px 2px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  animation: fadeIn 1s ease-out forwards; /* Smooth fade-in animation */
+}
+
+.animated-text {
+  text-align: center;
+  font-size: 3vw;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+}
+
+.phrase {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.phrase.visible {
+  opacity: 1;
+}
+
+
+
+.animated-text.complete {
+  opacity: 1;
+  display: block;
+}
+
+
+
+/* Button Styling */
+.enter-button {
+  font-family: 'Orbitron', sans-serif;
+  padding: 25px 60px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  position: absolute;
+  left: 48%;
+  bottom: 50%; /* Adjust for bottom position */
+  transform: translateX(-50%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  animation: buttonAppear 1s ease-out forwards;
+  animation-delay: 3s; /* Delay after Limited word */
+}
+.enter-button .enter-text,
+.enter-button .site-text {
+  position: absolute;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.enter-button .enter-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.enter-button .site-text {
+  opacity: 0;
+  transform: translateY(100%) scale(0);
+  background-color: white;
+  padding: 15px;
+  border-radius: 100%;
+  color: black;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.enter-button:hover .site-text {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.enter-button:hover {
+  background-color: black;
+}
+
+.enter-button:hover .enter-text {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+/* Button animation (appear after Limited word) */
+@keyframes buttonAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for Welcome Text, Quantum Chain, Limited Word */
+@keyframes showText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Welcome to the */
+.welcome-text {
+  animation: showText 1s ease-out forwards;
+}
+
+/* Quantum Chain */
+.quantum-chain {
+  animation: showText 1s ease-out 1s forwards; /* Starts after Welcome */
+}
+
+/* Limited */
+.limited-word {
+  animation: showText 1s ease-out 2s forwards; /* Starts after Quantum Chain */
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .landing-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .enter-button {
+    padding: 20px 60px;
+    font-size: 1.2rem;
+  }
+}

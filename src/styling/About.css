@@ -1,0 +1,24 @@
+.about-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align text to the left */
+    padding: 2rem;
+    color: white;
+  }
+  
+  .about-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-container p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-left: 1rem;
+  }
+      
