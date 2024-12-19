@@ -1,16 +1,16 @@
-/* Home Container Styling */
+
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw; /* Full viewport width */
-  height: 120vh; /* Full viewport height */
-  background-color: black; /* Optional dark background */
-  color: white; /* Text color */
-  text-align: center; /* Center align text */
-  position: relative; /* Ensures text stays above the image */
-  z-index: 2; /* Makes sure container stays in front */
+  width: 100vw; 
+  height: 120vh; 
+  background-color: black; 
+  color: white; 
+  text-align: center; 
+  position: relative; 
+  z-index: 2; 
   opacity: 0;
   transition: opacity 2s ease-in-out;
 }
@@ -19,64 +19,71 @@
   opacity: 1;
 }
 
-/* Heading and Paragraph */
+
 .home-container h1 {
-  font-size: 5rem !important; /* Ensures it applies */
-  margin: 0 0 1rem 0;
+  font-size: 5rem !important; 
+  margin: 0;  
+  text-align: left; 
+  width: auto;  
+  display: block;  
+  position: absolute;  
+  top: 20%; 
+  left: 31%; 
+  padding-left: 2rem; 
 }
 
-/* Wrapper to center the image */
+
 .image-wrapper {
-  width: 100%; /* Set size of the container */
-  height: 100%; /* Make the wrapper square */
-  position: absolute; /* Position it below the text */
+  width: 100%;
+  height: 100%;
+  position: absolute; 
   overflow: hidden;
-  bottom: 10%; /* Move the image wrapper lower */
-  margin: 5rem 0; /* Adjust the space between h1 and p */
-  border-radius: 50%; /* Optional: Makes the wrapper circular */
-  display: flex; /* Flexbox to center content inside the wrapper */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  z-index: 1; /* Keep the image behind the text */
+  bottom: 10%; 
+  margin: 5rem 0; 
+  border-radius: 50%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1; 
 }
 
 .circular-image {
-  width: 100%; /* Image takes up the full size of the wrapper */
+  width: 100%; 
   position: absolute;
-  animation: globeMotion 30s infinite linear; /* Add the globe-like motion */
+  animation: globeMotion 30s infinite linear; 
 }
 
 @keyframes globeMotion {
   0% {
-    transform: rotateX(0deg) rotateY(0deg); /* Initial state */
+    transform: rotateX(0deg) rotateY(0deg); 
   }
   25% {
-    transform: rotateX(20deg) rotateY(40deg); /* Tilted in the x and y directions */
+    transform: rotateX(20deg) rotateY(40deg); 
   }
   50% {
-    transform: rotateX(0deg) rotateY(80deg); /* More rotation along the y-axis */
+    transform: rotateX(0deg) rotateY(80deg); 
   }
   75% {
-    transform: rotateX(-20deg) rotateY(40deg); /* Tilted in the opposite direction */
+    transform: rotateX(-20deg) rotateY(40deg); 
   }
   100% {
-    transform: rotateX(0deg) rotateY(0deg); /* Back to the initial state */
+    transform: rotateX(0deg) rotateY(0deg); 
   }
 }
 
-/* Home Container Styling */
+
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw; /* Full viewport width */
-  height: 120vh; /* Full viewport height */
-  background-color: black; /* Optional dark background */
-  color: white; /* Text color */
-  text-align: center; /* Center align text */
-  position: relative; /* Ensures text stays above the image */
-  z-index: 2; /* Makes sure container stays in front */
+  width: 100vw;
+  height: 120vh; 
+  background-color: black; 
+  color: white; 
+  text-align: center;
+  position: relative; 
+  z-index: 2;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
@@ -85,70 +92,69 @@
   opacity: 1;
 }
 
-/* Heading and Paragraph */
+
 .home-container h1 {
-  font-size: 5rem !important; /* Ensures it applies */
+  font-size: 5rem !important; 
   margin: 0 0 1rem 0;
 }
 
-/* Wrapper to center the image */
 .image-wrapper {
-  width: 100%; /* Set size of the container */
-  height: 100%; /* Make the wrapper square */
-  position: absolute; /* Position it below the text */
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
   overflow: hidden;
-  bottom: 10%; /* Move the image wrapper lower */
-  margin: 5rem 0; /* Adjust the space between h1 and p */
-  border-radius: 50%; /* Optional: Makes the wrapper circular */
-  display: flex; /* Flexbox to center content inside the wrapper */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  z-index: 1; /* Keep the image behind the text */
+  bottom: 10%;
+  margin: 5rem 0; 
+  border-radius: 50%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1; 
 }
 
 .circular-image {
-  width: 100%; /* Image takes up the full size of the wrapper */
+  width: 100%; 
+  top: 1%;
   position: absolute;
-  animation: globeMotion 30s infinite linear; /* Add the globe-like motion */
+  animation: globeMotion 30s infinite linear; 
 }
 
 @keyframes globeMotion {
   0% {
-    transform: rotateX(0deg) rotateY(0deg); /* Initial state */
+    transform: rotateX(0deg) rotateY(0deg); 
   }
   25% {
-    transform: rotateX(20deg) rotateY(40deg); /* Tilted in the x and y directions */
+    transform: rotateX(20deg) rotateY(40deg);
   }
   50% {
-    transform: rotateX(0deg) rotateY(80deg); /* More rotation along the y-axis */
+    transform: rotateX(0deg) rotateY(80deg); 
   }
   75% {
-    transform: rotateX(-20deg) rotateY(40deg); /* Tilted in the opposite direction */
+    transform: rotateX(-20deg) rotateY(40deg); 
   }
   100% {
-    transform: rotateX(0deg) rotateY(0deg); /* Back to the initial state */
+    transform: rotateX(0deg) rotateY(0deg); 
   }
 }
 
-/* Container for cards */
-/* Container for cards */
+
 .container {
   display: flex;
   justify-content: center;
-  gap: 6rem; /* Adjust gap between cards */
-  margin-top: 25rem; /* Increased margin to push cards lower */
-  flex-wrap: wrap; /* Ensures cards stack on smaller screens */
-  width: 100%; /* Full width */
+  gap: 6rem; 
+  margin-top: 25rem; 
+  flex-wrap: wrap;
+  width: 100%; 
   position: relative;
   z-index: 3;
 }
 
-/* Individual cards */
 .card {
   position: relative;
-  background: transparent; /* Transparent background */
+  background: transparent; 
   color: white;
   padding: 1.5rem;
+  top: 25%;
   border-radius: 15px;
   text-align: center;
   max-width: 350px;
@@ -165,59 +171,38 @@
 }
 
 .card h3 {
-  font-size: 1.8rem; /* Modern font size for the heading */
+  font-size: 1.8rem; 
   margin-bottom: 0.5rem;
 }
 
 .card p {
-  font-size: 1rem; /* Legible font size for text */
-  color: rgba(255, 255, 255, 0.8); /* Softer text color for elegance */
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8); 
 }
 
 .card .icon {
-  width: 80px; /* Modern, consistent size for icons */
+  width: 80px; 
   height: 80px;
-  margin: 0 auto; /* Center the icon */
+  margin: 0 auto; 
 }
 
 .card-icon {
   width: 50%;
   height: 100%;
-  object-fit: contain; /* Maintain aspect ratio of images */
+  object-fit: contain; 
 }
 
 .card:hover {
-  transform: scale(1.05); /* Gentle scaling on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Stronger shadow for hover */
+  transform: scale(1.05); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Add divider for separation */
 .card .divider {
-  width: 50%; /* Centered, minimal divider */
+  width: 50%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.4); /* Faint line for a clean break */
-  margin: 0.5rem auto; /* Space around the divider */
+  background-color: rgba(255, 255, 255, 0.4); 
+  margin: 0.5rem auto; 
 }
 
 
-/* Button Styling */
-.btn {
-  margin: 0 auto; /* Center button within card */
-  width: auto; /* Adjusts based on text */
-  padding: 0.8rem 1.5rem; /* Comfortable padding */
-  border: 2px solid white;
-  color: white;
-  font-size: 0.8rem;
-  font-weight: bold;
-  border-radius: 50px; /* Rounded pill shape */
-  cursor: pointer;
-  text-transform: uppercase;
-  background: transparent;
-  transition: all 0.3s ease;
-}
 
-.btn:hover {
-  color: #fff; /* Text turns white */
-  background: rgba(255, 69, 0, 0.8); /* Fill with orangy-red */
-  border-color: rgba(255, 69, 0, 1);
-}

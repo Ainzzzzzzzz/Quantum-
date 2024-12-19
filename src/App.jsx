@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Client from './pages/Client';
 import Contact from './pages/Contact';
+import lgo from './img/lgo.png'; 
 import './App.css';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
   const pages = ['/', '/home', '/about', '/services', '/client', '/contact'];
   const currentIndex = pages.indexOf(location.pathname);
 
-  // Handle page navigation
+  
   const handleNavigate = (direction) => {
     const nextIndex = currentIndex + direction;
     if (nextIndex >= 0 && nextIndex < pages.length) {
@@ -25,51 +25,55 @@ function App() {
     }
   };
 
-  // Disable transitions during landing animation
+  
   useEffect(() => {
-    document.body.classList.add('no-transition'); // Disable transitions
-    return () => document.body.classList.remove('no-transition'); // Re-enable after landing
+    document.body.classList.add('no-transition'); 
+    return () => document.body.classList.remove('no-transition'); 
   }, []);
 
-  // Trigger when landing page animation is complete
+  
   const handleLandingComplete = () => {
-    setIsLandingComplete(true); // Set landing to complete after animation
-    document.body.classList.remove('no-transition'); // Re-enable transitions
+    setIsLandingComplete(true); 
+    document.body.classList.remove('no-transition'); 
   };
 
   return (
-    <div className="app-container">
-      <TransitionGroup className="transition-group">
-        <CSSTransition
-          key={location.key}
-          timeout={600}
-          classNames="page-transition"
-        >
-          <Routes location={location}>
-            <Route path="/" element={<Landing onComplete={handleLandingComplete} />} />
-            <Route path="/home" element={<Home isLandingComplete={isLandingComplete} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/client" element={<Client />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </CSSTransition>
-      </TransitionGroup>
+    <div className={`app-container ${location.pathname === '/' ? 'landing-page' : ''}`}>
+     
+      {location.pathname !== '/' && (
+        <nav className="navbar">
+          <div className="navbar-container">
+            <div className="nav-logo">
+              <a href="/">
+                <img src={lgo} alt="Logo" className="logo-image" />
+              </a>
+            </div>
+            <div className="nav-items">
+              <a href="/home">Home</a>
+              <a href="/about">About</a>
+              <a href="/services">Services</a>
+              <a href="/client">Client</a>
+              <a href="/contact">Contact</a>
+            </div>
+          </div>
+        </nav>
+      )}
 
-      <div className="navigation-arrows">
-        {currentIndex > 0 && (
-          // biome-ignore lint/a11y/useButtonType: <explanation>
-<button className="arrow left-arrow" onClick={() => handleNavigate(-1)}>
-            &#8592;
-          </button>
-        )}
-        {currentIndex < pages.length - 1 && (
-          // biome-ignore lint/a11y/useButtonType: <explanation>
-<button className="arrow right-arrow" onClick={() => handleNavigate(1)}>
-            &#8594;
-          </button>
-        )}
-      </div>
+      <Routes location={location}>
+        <Route path="/" element={<Landing onComplete={handleLandingComplete} />} />
+        <Route path="/home" element={<Home isLandingComplete={isLandingComplete} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/client" element={<Client />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+     
+      {location.pathname !== '/' && (
+        <footer className="footer">
+          <p>Copyright Quantum Chain Limited © 2024</p>
+        </footer>
+      )}
     </div>
   );
 }

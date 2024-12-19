@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "../styling/Home.css";
-import QT from "../img/QT.png"; // Importing the circular image
-import logo1 from "../img/logo1.png"; // First card icon
-import logo2 from "../img/logo2.png"; // Second card icon
-import logo3 from "../img/logo3.png"; // Third card icon
+import QT from "../img/QT.png"; 
+import logo1 from "../img/logo1.png"; 
+import logo2 from "../img/logo2.png"; 
+import logo3 from "../img/logo3.png"; 
 
 const Home = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setShowContent(true); // Trigger fade-in after a delay
-    }, 200); // Delay time before showing content
+      setShowContent(true); 
+    }, 200); 
   }, []);
 
   return (
