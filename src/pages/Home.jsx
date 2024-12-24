@@ -4,10 +4,6 @@ import QT from "../img/QT.png";
 import logo1 from "../img/logo1.png"; 
 import logo2 from "../img/logo2.png"; 
 import logo3 from "../img/logo3.png"; 
-import About from './About';
-import Services from './Services'
-import Client from './Client';
-import Contact from './Contact';
 
 const Home = () => {
   const [showContent, setShowContent] = useState(false);

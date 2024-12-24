@@ -19,9 +19,8 @@ body {
 .navbar {
   position: fixed;
   top: 2%;
-  left: 0;
+  left: 30%;
   width: 100%;
-  padding: 0 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,14 +120,10 @@ body {
 }
 
 footer {
-  background: black;
+  background: none;
+  border: none;
   color: white;
   padding: 1rem;
-  margin-bottom: 40px;
-  width: 100%; 
-  position: relative;
-  bottom: 0; 
   text-align: center;
   box-shadow: none;
 }
-
