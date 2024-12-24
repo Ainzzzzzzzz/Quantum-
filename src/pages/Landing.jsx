@@ -62,7 +62,7 @@ const QuantumCursor = () => {
 const Landing = () => {
   const navigate = useNavigate();
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [zoomOut, setZoomOut] = useState(false); // State for zoom-out effect
+  const [zoomOut, setZoomOut] = useState(false); 
 
   const phrases = [
     "Welcome to The",
@@ -75,16 +75,16 @@ const Landing = () => {
       setCurrentPhraseIndex((prevIndex) =>
         prevIndex < phrases.length - 1 ? prevIndex + 1 : prevIndex
       );
-    }, 1000); // Adjust the time interval for each phrase
+    }, 1000); 
 
     return () => clearInterval(interval);
   }, []);
 
   const goToHome = () => {
-    setZoomOut(true); // Trigger zoom-out effect
+    setZoomOut(true); 
     setTimeout(() => {
-      navigate("/home"); // Navigate to the home page after the delay
-    }, 1000); // Wait for the zoom-out effect
+      navigate("/home"); 
+    }, 1000); 
   };
 
   const hexagonCount = 15;
@@ -107,9 +107,9 @@ const Landing = () => {
 
   return (
     <div className="page-container">
-      {/* Home page content, initially hidden under landing page */}
+    
       <div className={`home-page-content ${zoomOut ? "visible" : ""}`}>
-        {/* Replace this with your actual home page content */}
+      
         <h1>Welcome to the Home Page</h1>
       </div>
 

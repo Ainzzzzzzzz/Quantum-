@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "../styling/Home.css";
-import QT from "../img/QT.png"; // Importing the circular image
-import logo1 from "../img/logo1.png"; // First card icon
-import logo2 from "../img/logo2.png"; // Second card icon
-import logo3 from "../img/logo3.png"; // Third card icon
+import QT from "../img/QT.png"; 
+import logo1 from "../img/logo1.png"; 
+import logo2 from "../img/logo2.png"; 
+import logo3 from "../img/logo3.png"; 
+import About from './About';
+import Services from './Services'
+import Client from './Client';
+import Contact from './Contact';
 
 const Home = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setShowContent(true); // Trigger fade-in after a delay
-    }, 200); // Delay time before showing content
+      setShowContent(true); 
+    }, 200); 
   }, []);
 
   return (
     <div className={`home-container ${showContent ? "fade-in" : ""}`}>
+      {/* Home Content */}
       <h1>THE QUANTUM <br />CHAIN LIMITED</h1>
       <div className="image-wrapper">
         <img src={QT} alt="Galaxy or Blackhole" className="circular-image" />
@@ -30,7 +35,7 @@ const Home = () => {
           <h3>Financial Services</h3>
           <p>We offer a range of financial services to suit your needs.</p>
           {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-          <button className="btn">More →</button>
+<button className="btn">More →</button>
         </div>
         <div className="card">
           <div className="icon">
@@ -39,7 +44,7 @@ const Home = () => {
           <h3>Investment Planning</h3>
           <p>Discover how investment planning can help you achieve your goals.</p>
           {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-          <button className="btn">More →</button>
+<button className="btn">More →</button>
         </div>
         <div className="card">
           <div className="icon">
@@ -48,9 +53,21 @@ const Home = () => {
           <h3>Consulting Services</h3>
           <p>Our experts provide guidance tailored to your needs.</p>
           {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-          <button className="btn">More →</button>
+<button className="btn">More →</button>
         </div>
       </div>
+
+      {/* About Content */}
+      <About />
+
+      {/* Services Content */}
+     <Services />
+
+ {/* Client Content */}
+<Client />
+
+ {/* Client Content */}
+ <Contact />  
     </div>
   );
 };
