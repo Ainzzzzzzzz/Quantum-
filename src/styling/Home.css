@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 100vw; /* Ensure it takes up the full width */
+  width: 100vw;
   min-height: 115vh;
   bottom: 1rem;
   background-color: black;
@@ -14,10 +14,9 @@
   z-index: 1;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden;
   overflow-y: auto;
 }
-
 
 .home-container.fade-in {
   opacity: 1;
@@ -29,7 +28,6 @@
   z-index: 2;
   position: relative;
 }
-
 
 .image-wrapper {
   width: 100%;
@@ -80,6 +78,7 @@
   position: relative;
   z-index: 3;
 }
+
 .card {
   position: relative;
   background: transparent;
@@ -88,7 +87,7 @@
   border-radius: 15px;
   text-align: center;
   max-width: 350px;
-  margin-top: 2%; /* Adjust this value to move the card up */
+  margin-top: 2%;
   width: 100%;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
@@ -101,12 +100,9 @@
   gap: 1rem;
 }
 
-
-
-/* Hover effect for the card */
 .card:hover {
-  transform: scale(1.05); /* Slightly scale up the card on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .card h3 {
@@ -138,17 +134,15 @@
   margin: 0.5rem auto;
 }
 
-
-/* Section Styling */
 section {
   width: 100%;
-  padding: 0; /* Remove padding to avoid excess white space */
+  padding: 0;
   text-align: center;
-  height: 100vh; /* Ensure each section takes up full viewport height */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box; /* Ensure padding/margin doesn't cause overflow */
+  box-sizing: border-box;
 }
 
 #home {

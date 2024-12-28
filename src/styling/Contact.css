@@ -21,13 +21,13 @@
 
   .contact-container h1 {
     font-size: 5rem;
-    margin: 0; /* Remove any margins */
-    text-align: center; /* Center the text */
-    letter-spacing: 2px; /* Optional: Adjust spacing between letters */
+    margin: 0; 
+    text-align: center;
+    letter-spacing: 2px; 
     font-weight: bold;
-    position: absolute; /* Use absolute positioning */
-    left: 40%; /* Move it 40% to the right */
-    top: 10%; /* Move it 20% down (adjust as needed) */
+    position: absolute;
+    left: 40%; 
+    top: 10%;
 }
 
 
