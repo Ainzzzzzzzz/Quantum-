@@ -51,19 +51,7 @@ const Home = () => {
           {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
 <button className="btn">More →</button>
         </div>
-      </div>
-
-      {/* About Content */}
-      <About />
-
-      {/* Services Content */}
-     <Services />
-
- {/* Client Content */}
-<Client />
-
- {/* Client Content */}
- <Contact />  
+      </div>  
     </div>
   );
 };

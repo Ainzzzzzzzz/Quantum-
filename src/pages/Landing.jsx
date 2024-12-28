@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "../styling/Landing.css";
 
 const QuantumCursor = () => {
@@ -59,32 +58,27 @@ const QuantumCursor = () => {
   return null;
 };
 
-const Landing = () => {
-  const navigate = useNavigate();
+const Landing = ({ onEnterSite }) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [zoomOut, setZoomOut] = useState(false); 
+  const [zoomOut, setZoomOut] = useState(false);
 
-  const phrases = [
-    "Welcome to The",
-    "Quantum Chain",
-    "Limited",
-  ];
+  const phrases = ["Welcome to The", "Quantum Chain", "Limited"];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPhraseIndex((prevIndex) =>
         prevIndex < phrases.length - 1 ? prevIndex + 1 : prevIndex
       );
-    }, 1000); 
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
   const goToHome = () => {
-    setZoomOut(true); 
+    setZoomOut(true);
     setTimeout(() => {
-      navigate("/home"); 
-    }, 1000); 
+      onEnterSite();
+    }, 1000);
   };
 
   const hexagonCount = 15;
@@ -107,13 +101,6 @@ const Landing = () => {
 
   return (
     <div className="page-container">
-    
-      <div className={`home-page-content ${zoomOut ? "visible" : ""}`}>
-      
-        <h1>Welcome to the Home Page</h1>
-      </div>
-
-      {/* Landing page content */}
       <div className={`landing-container ${zoomOut ? "zoom-out" : ""}`}>
         <QuantumCursor />
         <div className="wrapper">{generateHexRows()}</div>
@@ -140,7 +127,6 @@ const Landing = () => {
             </span>
           </div>
         </h1>
-
         {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
 <button
           className="enter-button"
