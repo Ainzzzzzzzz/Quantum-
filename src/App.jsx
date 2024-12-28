@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-scroll'; // Import Link from react-scroll
+import { Link } from 'react-scroll'; 
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -11,12 +11,12 @@ import lgo from './img/lgo.png';
 function App() {
   return (
     <div className="app-container">
-      {/* Navbar */}
+     
       <nav className="navbar">
         <div className="navbar-container">
           <div className="nav-logo">
-            {/* Make the logo clickable to go to the landing page */}
-            <a href="#home"> {/* This will scroll to the top of the page */}
+          
+            <a href="#home"> 
               <img src={lgo} alt="Logo" className="logo-image" />
             </a>
           </div>
